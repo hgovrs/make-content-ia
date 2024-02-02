@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Conversor de Texto para Fala</title>
+</head>
+
+<body>
+    <h1>Conversor de Texto para Fala</h1>
+    <form action="/convert" method="post">
+        <label for="text">Digite seu texto aqui:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Converter">
+    </form>
+    {% if audio_url %}
+    <h2>Seu Áudio:</h2>
+    <audio controls>
+        <source src="{{ audio_url }}" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    {% endif %}
+</body>
+
+</html>
